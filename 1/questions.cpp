@@ -56,7 +56,7 @@
 
 // int main() {
 //     int n;
-//     cin >> n; // Input from the user
+//     cin >> n; 
 //     cout << findSum(n) << endl;
 //     return 0;
 // }
@@ -78,31 +78,40 @@
 // 0 ≤ arr[i] ≤ 106
 // 0 ≤ x ≤ 105
 
+// 
+
+// Given a positive integer n, determine whether it is odd or even. Return true if the number is even and false if the number is odd.
+// Examples:
+// Input: n = 15
+// Output: false
+// Explanation: The number is not divisible by 2, Odd number.
+// Input: n = 44
+// Output: true
+// Explanation: The number is divisible by 2, Even number.
+// Constraints:
+// 1 ≤ n ≤ 104
+
+
 #include <iostream>
 using namespace std;
 
-int search(int arr[], int n, int x) {
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == x)
-            return i; // Element found, return index
+class Solution {
+  public:
+    bool isEven(int n) {
+        return n % 2 == 0;
     }
-    return -1; // Element not found
-}
+};
 
 int main() {
     int n;
-    cin >> n; // Input array size
+    cin >> n; 
 
-    int arr[n];
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i]; // Input array elements
+    Solution obj;
+    if (obj.isEven(n)) {
+        cout << "Even" << endl;
+    } else {
+        cout << "Odd" << endl;
     }
 
-    int x;
-    cin >> x; // Element to search for
-
-    int result = search(arr, n, x);
-    cout << result << endl; // Output index or -1
     return 0;
 }
-
